@@ -74,6 +74,8 @@ if(process.env.ENV !== "DEV") {
   var privatekey = fs.readFileSync('privatekey.pem', "utf8")
   console.log(typeof privatekey)
   var cert = fs.readFileSync('server.crt', "utf8")
+  console.log('Private Key:', privatekey);
+  console.log('Certificate:', cert);
   var header = "-----BEGIN PRIVATE KEY-----"
   var footer = "-----END PRIVATE KEY-----"
   console.log(privatekey.split(header))
