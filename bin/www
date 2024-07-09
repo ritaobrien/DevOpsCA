@@ -77,7 +77,7 @@ if(process.env.ENV !== "DEV") {
   var header = "-----BEGIN PRIVATE KEY-----"
   var footer = "-----END PRIVATE KEY-----"
   console.log(privatekey.split(header))
-  privatekey= privatekey.split(header)[1]
+  privatekey = privatekey.split(header)[1]
   privatekey = privatekey.split(footer)[0]
   privatekey = header + "\n" + privatekey.replace(/ /g, "\n") + footer+"\n"
 
@@ -86,7 +86,7 @@ if(process.env.ENV !== "DEV") {
 
   var header = "-----BEGIN CERTIFICATE-----"
   var footer = "-----END CERTIFICATE-----"
-  cert= cert.split(header)[1]
+  cert = cert.split(header)[1]
   cert = cert.split(footer)[0]
   cert = header + "\n" + cert.replace(/ /g, "\n") + footer+"\n"
 
