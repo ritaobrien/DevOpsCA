@@ -89,6 +89,7 @@ if(process.env.ENV !== "DEV") {
   cert = cert.split(header)[1]
   cert = cert.split(footer)[0]
   cert = header + "\n" + cert.replace(/ /g, "\n") + footer+"\n"
+  console.log(privatekey)
 
   var options = {
     key  : privatekey,
