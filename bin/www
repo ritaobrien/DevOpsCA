@@ -83,28 +83,11 @@ if(process.env.ENV !== "DEV") {
 
   console.log(privatekey)
 
-  var header = "-----BEGIN CERTIFICATE-----";
-var footer = "-----END CERTIFICATE-----";
-
-// Split the certificate to extract the main body
-cert = cert.split(header)[1];
-cert = cert.split(footer)[0];
-
-// Remove any leading or trailing whitespace
-cert = cert.trim();
-
-// Add line breaks every 64 characters for better readability
-cert = cert.match(/.{1,64}/g).join("\n");
-
-// Reconstruct the certificate with header and footer
-cert = header + "\n" + cert + "\n" + footer + "\n";
-
-
-  //var header = "-----BEGIN CERTIFICATE-----"
-  //var footer = "-----END CERTIFICATE-----"
-  //cert = cert.split(header)[1]
-  //cert = cert.split(footer)[0]
-  //cert = header + "\n" + cert.replace(/ /g, "\n") + footer+"\n"
+  var header = "-----BEGIN CERTIFICATE-----"
+  var footer = "-----END CERTIFICATE-----"
+  cert = cert.split(header)[1]
+  cert = cert.split(footer)[0]
+  cert = header + "\n" + cert.replace(/ /g, "\n") + footer+"\n"
 
   var options = {
     key  : privatekey,
